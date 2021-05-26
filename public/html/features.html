@@ -1,0 +1,224 @@
+<html>
+
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+		<meta name="generator" content="Adobe GoLive 4">
+		<title>HolePuncher- Features</title>
+		<csactions>
+			<csaction name="B39FEFF70" class="Set Image URL" type="ONEVENT" val0="description" val1="../graphics/descriptions/aboutDesc.gif">
+			<csaction name="B39FEFF71" class="Set Image URL" type="ONEVENT" val0="description" val1="../graphics/descriptions/blankDesc.gif">
+			<csaction name="B39FEFF72" class="Set Image URL" type="ONEVENT" val0="description" val1="../graphics/descriptions/featuresDesc.gif">
+			<csaction name="B39FEFF73" class="Set Image URL" type="ONEVENT" val0="description" val1="../graphics/descriptions/blankDesc.gif">
+			<csaction name="B39FEFF74" class="Set Image URL" type="ONEVENT" val0="description" val1="../graphics/descriptions/downloadDesc.gif">
+			<csaction name="B39FEFF75" class="Set Image URL" type="ONEVENT" val0="description" val1="../graphics/descriptions/blankDesc.gif">
+			<csaction name="B39FEFF76" class="Set Image URL" type="ONEVENT" val0="description" val1="../graphics/descriptions/addonDesc.gif">
+			<csaction name="B39FEFF77" class="Set Image URL" type="ONEVENT" val0 val1="../graphics/descriptions/blankDesc.gif">
+			<csaction name="B39FEFF78" class="Set Image URL" type="ONEVENT" val0="description" val1="../graphics/descriptions/tipsDesc.gif">
+			<csaction name="B39FEFF79" class="Set Image URL" type="ONEVENT" val0="description" val1="../graphics/descriptions/blankDesc.gif">
+			<csaction name="B39FEFF710" class="Set Image URL" type="ONEVENT" val0="description" val1="../graphics/descriptions/bugDesc.gif">
+			<csaction name="B39FEFF711" class="Set Image URL" type="ONEVENT" val0="description" val1="../graphics/descriptions/blankDesc.gif">
+			<csaction name="B39FEFF712" class="Set Image URL" type="ONEVENT" val0="description" val1="../graphics/descriptions/commentsDesc.gif">
+			<csaction name="B39FEFF713" class="Set Image URL" type="ONEVENT" val0="description" val1="../graphics/descriptions/blankDesc.gif">
+		</csactions>
+		<csscriptdict>
+			<script><!--
+CSStopExecution = false;
+CSInit = new Array;
+function CSScriptInit() {
+idxArray = new Array;
+for(var i=0;i<CSInit.length;i++)
+	idxArray[i] = i;
+CSAction2(CSInit, idxArray);
+}
+CSAg = window.navigator.userAgent; CSBVers = parseInt(CSAg.charAt(CSAg.indexOf("/")+1),10);
+function IsIE() { return CSAg.indexOf("MSIE") > 0;}
+function CSIEStyl(s) { return document.all.tags("div")[s].style; }
+function CSNSStyl(s) { return CSFindElement(s,0); }
+function CSFindElement(n,ly) { if (CSBVers < 4) return document[n];
+	var curDoc = ly ? ly.document : document; var elem = curDoc[n];
+	if (!elem) { for (var i=0;i<curDoc.layers.length;i++) {
+		elem = CSFindElement(n,curDoc.layers[i]); if (elem) return elem; }}
+	return elem;
+}
+function CSButtonReturn () {
+	var bAgent = window.navigator.userAgent; 
+	var bAppName = window.navigator.appName;
+	if ((bAppName.indexOf("Explorer") >= 0) && (bAgent.indexOf("Mozilla/3") >= 0) && (bAgent.indexOf("Mac") >= 0))
+		return false; // follow link
+	else return true; // follow link
+}
+CSIm = new Object();
+function CSIShow(n,i) {
+	if (document.images) {
+		if (CSIm[n]) {
+			var img = (!IsIE()) ? CSFindElement(n,0) : document[n];
+			if (img && typeof(CSIm[n][i].src) != "undefined") {img.src = CSIm[n][i].src;}
+			if(i != 0)
+				self.status = CSIm[n][3];
+			else
+				self.status = " ";
+			return true;
+		}
+	}
+	return false;
+}
+function CSILoad(action) {
+	im = action[1];
+	if (document.images) {
+		CSIm[im] = new Object();
+		for (var i=2;i<5;i++) {
+			if (action[i] != '') { CSIm[im][i-2] = new Image(); CSIm[im][i-2].src = action[i]; }
+			else CSIm[im][i-2] = 0;
+		}
+		CSIm[im][3] = action[5];
+	}
+}
+CSStopExecution = false;
+
+function CSAction(array) { 
+	return CSAction2(CSAct, array);
+}
+function CSAction2(fct, array) { 
+	var result;
+	for (var i=0;i<array.length;i++) {
+		if(CSStopExecution) return false; 
+		var actArray = fct[array[i]];
+		var tempArray = new Array;
+		for(var j=1;j<actArray.length;j++) {
+			if((actArray[j] != null) && (typeof(actArray[j]) == "object") && (actArray[j].length == 2)) {
+				if(actArray[j][0] == "VAR") {
+					tempArray[j] = CSStateArray[actArray[j][1]];
+				}
+				else {
+					if(actArray[j][0] == "ACT") {
+						tempArray[j] = CSAction(new Array(new String(actArray[j][1])));
+					}
+				else
+					tempArray[j] = actArray[j];
+				}
+			}
+			else
+				tempArray[j] = actArray[j];
+		}			
+		result = actArray[0](tempArray);
+	}
+	return result;
+}
+CSAct = new Object;
+function CSSetImageURL(action) {
+	var img = null;
+	if (document.images) {
+		if (!IsIE()) img = CSFindElement(action[1],0);
+		else img = document.images[action[1]];
+		if (img) img.src = action[2];
+	}
+}
+// --></script>
+		</csscriptdict>
+		<csactiondict>
+		<script><!--
+CSInit[CSInit.length] = new Array(CSILoad,/*CMP*/'button7',/*URL*/'../graphics/linkbar/linkBaroff-01-01.gif',/*URL*/'../graphics/linkbar/linkBaron-01-01.gif',/*URL*/'','');
+CSInit[CSInit.length] = new Array(CSILoad,/*CMP*/'button5',/*URL*/'../graphics/linkbar/linkBaroff-01-03.gif',/*URL*/'../graphics/linkbar/linkBaron-01-03.gif',/*URL*/'','');
+CSInit[CSInit.length] = new Array(CSILoad,/*CMP*/'button4',/*URL*/'../graphics/linkbar/linkBaroff-01-05.gif',/*URL*/'../graphics/linkbar/linkBaron-01-05.gif',/*URL*/'','');
+CSInit[CSInit.length] = new Array(CSILoad,/*CMP*/'button3',/*URL*/'../graphics/linkbar/linkBaroff-01-07.gif',/*URL*/'../graphics/linkbar/linkBaron-01-07.gif',/*URL*/'','');
+CSInit[CSInit.length] = new Array(CSILoad,/*CMP*/'button2',/*URL*/'../graphics/linkbar/linkBaroff-01-09.gif',/*URL*/'../graphics/linkbar/linkBaron-01-09.gif',/*URL*/'','');
+CSInit[CSInit.length] = new Array(CSILoad,/*CMP*/'button',/*URL*/'../graphics/linkbar/linkBaroff-01-11.gif',/*URL*/'../graphics/linkbar/linkBaron-01-11.gif',/*URL*/'','');
+CSInit[CSInit.length] = new Array(CSILoad,/*CMP*/'button6',/*URL*/'../graphics/linkbar/linkBaroff-01-13.gif',/*URL*/'../graphics/linkbar/linkBaron-01-13.gif',/*URL*/'','');
+CSAct[/*CMP*/ 'B39FEFF70'] = new Array(CSSetImageURL,/*CMP*/ 'description',/*URL*/ '../graphics/descriptions/aboutDesc.gif');
+CSAct[/*CMP*/ 'B39FEFF71'] = new Array(CSSetImageURL,/*CMP*/ 'description',/*URL*/ '../graphics/descriptions/blankDesc.gif');
+CSAct[/*CMP*/ 'B39FEFF72'] = new Array(CSSetImageURL,/*CMP*/ 'description',/*URL*/ '../graphics/descriptions/featuresDesc.gif');
+CSAct[/*CMP*/ 'B39FEFF73'] = new Array(CSSetImageURL,/*CMP*/ 'description',/*URL*/ '../graphics/descriptions/blankDesc.gif');
+CSAct[/*CMP*/ 'B39FEFF74'] = new Array(CSSetImageURL,/*CMP*/ 'description',/*URL*/ '../graphics/descriptions/downloadDesc.gif');
+CSAct[/*CMP*/ 'B39FEFF75'] = new Array(CSSetImageURL,/*CMP*/ 'description',/*URL*/ '../graphics/descriptions/blankDesc.gif');
+CSAct[/*CMP*/ 'B39FEFF76'] = new Array(CSSetImageURL,/*CMP*/ 'description',/*URL*/ '../graphics/descriptions/addonDesc.gif');
+CSAct[/*CMP*/ 'B39FEFF77'] = new Array(CSSetImageURL,/*CMP*/ '',/*URL*/ '../graphics/descriptions/blankDesc.gif');
+CSAct[/*CMP*/ 'B39FEFF78'] = new Array(CSSetImageURL,/*CMP*/ 'description',/*URL*/ '../graphics/descriptions/tipsDesc.gif');
+CSAct[/*CMP*/ 'B39FEFF79'] = new Array(CSSetImageURL,/*CMP*/ 'description',/*URL*/ '../graphics/descriptions/blankDesc.gif');
+CSAct[/*CMP*/ 'B39FEFF710'] = new Array(CSSetImageURL,/*CMP*/ 'description',/*URL*/ '../graphics/descriptions/bugDesc.gif');
+CSAct[/*CMP*/ 'B39FEFF711'] = new Array(CSSetImageURL,/*CMP*/ 'description',/*URL*/ '../graphics/descriptions/blankDesc.gif');
+CSAct[/*CMP*/ 'B39FEFF712'] = new Array(CSSetImageURL,/*CMP*/ 'description',/*URL*/ '../graphics/descriptions/commentsDesc.gif');
+CSAct[/*CMP*/ 'B39FEFF713'] = new Array(CSSetImageURL,/*CMP*/ 'description',/*URL*/ '../graphics/descriptions/blankDesc.gif');
+
+// --></script>
+		</csactiondict>
+	</head>
+
+	<body bgcolor="black" text="white" link="white" alink="white" vlink="#7f7f7f" onload="CSScriptInit();">
+		<center>
+			<table border="0" cellpadding="0" cellspacing="0" width="74" height="288">
+				<tr height="85">
+					<td width="600" height="85" valign="bottom">
+						<table border="0" cellpadding="0" cellspacing="0" width="137">
+							<tr>
+								<td><img height="45" width="300" src="../graphics/corner.gif"></td>
+								<td><img height="45" width="300" src="../graphics/banners/features.gif"></td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<table border="0" cellpadding="0" cellspacing="0" width="600">
+										<tr>
+											<td width="39"><csobj w="39" h="20" t="Button" ht="../graphics/linkbar/linkBaron-01-01.gif" csover="B39FEFF70" csout="B39FEFF71"><a href="about.html" onmouseover="CSAction(new Array(/*CMP*/'B39FEFF70'));return CSIShow(/*CMP*/'button7',1)" onmouseout="CSAction(new Array(/*CMP*/'B39FEFF71'));return CSIShow(/*CMP*/'button7',0)" onclick="return CSButtonReturn()"><img src="../graphics/linkbar/linkBaroff-01-01.gif" width="39" height="20" name="button7" border="0"></a></csobj></td>
+											<td width="9"><img height="20" width="9" src="../graphics/linkbar/linkBaroff-01-02.gif"></td>
+											<td width="51"><csobj w="51" h="20" t="Button" ht="../graphics/linkbar/linkBaron-01-03.gif" csover="B39FEFF72" csout="B39FEFF73"><a href="features.html" onmouseover="CSAction(new Array(/*CMP*/'B39FEFF72'));return CSIShow(/*CMP*/'button5',1)" onmouseout="CSAction(new Array(/*CMP*/'B39FEFF73'));return CSIShow(/*CMP*/'button5',0)" onclick="return CSButtonReturn()"><img src="../graphics/linkbar/linkBaroff-01-03.gif" width="51" height="20" name="button5" border="0"></a></csobj></td>
+											<td width="10"><img height="20" width="10" src="../graphics/linkbar/linkBaroff-01-04.gif"></td>
+											<td width="26"><csobj w="59" h="20" t="Button" ht="../graphics/linkbar/linkBaron-01-05.gif" csover="B39FEFF74" csout="B39FEFF75"><a href="download.html" onmouseover="CSAction(new Array(/*CMP*/'B39FEFF74'));return CSIShow(/*CMP*/'button4',1)" onmouseout="CSAction(new Array(/*CMP*/'B39FEFF75'));return CSIShow(/*CMP*/'button4',0)" onclick="return CSButtonReturn()"><img src="../graphics/linkbar/linkBaroff-01-05.gif" width="59" height="20" name="button4" border="0"></a></csobj></td>
+											<td width="10"><img height="20" width="10" src="../graphics/linkbar/linkBaroff-01-06.gif"></td>
+											<td width="52"><csobj w="52" h="20" t="Button" ht="../graphics/linkbar/linkBaron-01-07.gif" csover="B39FEFF76" csout="B39FEFF77"><a href="addons.html" onmouseover="CSAction(new Array(/*CMP*/'B39FEFF76'));return CSIShow(/*CMP*/'button3',1)" onmouseout="CSAction(new Array(/*CMP*/'B39FEFF77'));return CSIShow(/*CMP*/'button3',0)" onclick="return CSButtonReturn()"><img src="../graphics/linkbar/linkBaroff-01-07.gif" width="52" height="20" name="button3" border="0"></a></csobj></td>
+											<td width="9"><img height="20" width="9" src="../graphics/linkbar/linkBaroff-01-08.gif"></td>
+											<td><csobj w="26" h="20" t="Button" ht="../graphics/linkbar/linkBaron-01-09.gif" csover="B39FEFF78" csout="B39FEFF79"><a href="tips.html" onmouseover="CSAction(new Array(/*CMP*/'B39FEFF78'));return CSIShow(/*CMP*/'button2',1)" onmouseout="CSAction(new Array(/*CMP*/'B39FEFF79'));return CSIShow(/*CMP*/'button2',0)" onclick="return CSButtonReturn()"><img src="../graphics/linkbar/linkBaroff-01-09.gif" width="26" height="20" name="button2" border="0"></a></csobj></td>
+											<td><img height="20" width="10" src="../graphics/linkbar/linkBaroff-01-10.gif"></td>
+											<td><csobj w="69" h="20" t="Button" ht="../graphics/linkbar/linkBaron-01-11.gif" csover="B39FEFF710" csout="B39FEFF711"><a href="bugreports.html" onmouseover="CSAction(new Array(/*CMP*/'B39FEFF710'));return CSIShow(/*CMP*/'button',1)" onmouseout="CSAction(new Array(/*CMP*/'B39FEFF711'));return CSIShow(/*CMP*/'button',0)" onclick="return CSButtonReturn()"><img src="../graphics/linkbar/linkBaroff-01-11.gif" width="69" height="20" name="button" border="0"></a></csobj></td>
+											<td><img height="20" width="9" src="../graphics/linkbar/linkBaroff-01-12.gif"></td>
+											<td><csobj w="63" h="20" t="Button" ht="../graphics/linkbar/linkBaron-01-13.gif" csover="B39FEFF712" csout="B39FEFF713"><a href="comments.html" onmouseover="CSAction(new Array(/*CMP*/'B39FEFF712'));return CSIShow(/*CMP*/'button6',1)" onmouseout="CSAction(new Array(/*CMP*/'B39FEFF713'));return CSIShow(/*CMP*/'button6',0)" onclick="return CSButtonReturn()"><img src="../graphics/linkbar/linkBaroff-01-13.gif" width="63" height="20" name="button6" border="0"></a></csobj></td>
+											<td><img height="20" width="184" src="../graphics/linkbar/linkBaroff-01-14.gif"></td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2"><img height="20" width="600" src="../graphics/descriptions/blankDesc.gif" name="description"></td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+				<tr height="187">
+					<td width="600" height="187" align="center" valign="middle" bgcolor="#000466">
+						<table cool width="569" height="478" border="0" cellpadding="0" cellspacing="0" gridx="16" showgridx gridy="16" showgridy>
+							<tr height="1" cntrlrow>
+								<td width="1" height="1"></td>
+								<td width="566" height="1"><spacer type="block" width="566" height="1"></td>
+							</tr>
+							<tr height="475">
+								<td width="1" height="475"><spacer type="block" width="1" height="475"></td>
+								<td width="566" height="475" colspan="1" rowspan="1" valign="top" align="left" xpos="0" content csheight="475">Since it is an editor for interface altering skins, HolePuncher must contain tools for easily managing all resources and items that you would need to edit such a thing. For those of you familiar with REALbasic, HolePuncher's user interface will be very familiar in that it is primarily based on that.
+									<p>As part of the HolePuncher interface, the project window is where you will find a list of major components (ie pictures, sounds, and windows). By double clicking on an item, you can play the sound, preview the picture, or open a window for editing. Once a window is open, you can move components around either with the mouse, arrow keys, or numericly using the properties window. The properties window not only allows you to edit the position and size of controls, but also is the place where you will edit the caption that appears on buttons, the title of windows, and many more things.</p>
+									<p>The Tools window is where you create new controls in the window. Simply by clicking and dragging, it picks up a control and is ready to be dropped into a window.</p>
+									<p>HolePuncher also has full contextual menu support that allow you to do just about anything you would want to with the object that you brought the menu up from. Simply by control-clicking on a control, you can cut, copy, add an action, remove all actions, of delete the control, or  if you have an action on the clipboard, you can paste an action into it.</p>
+									<p>Actions allow you to give buttons and other controls functionality in a TinHole skin. All you have to do is define what triggers the action (mouse click for example) and type in some of the easy to learn scripting language, and you have added an action. Skins also take full advantage of TinHole's plugins and helper applications. If you write a plugin for Tinhole's use, you can reference commands of it from your skin's actions.</p>
+									<p>These are the controls that HolePuncher currently supports:</p>
+									<ul>
+										<p>PushButton- A standard button. Supports icon and/or text caption<br>
+										PictureBox- Use it to place a picture in a window; does not support actions.<br>
+										Placard- Used to fill space, take advantage of TinHole's color scheme, or have live window drag.<br>
+										StaticText- Place text inside your window with color and font information.<br>
+										EditField- Standard text input box. Supports color and font customization.<br>
+										DisclosureTriangle- A triangle that can be used to resize controls or windows by clicking it.<br>
+										NubBox- A beveled box with an optional nub. Color is customizable.<br>
+										PopupMenu- Add a popup menu to your skin.<br>
+										ListBox- Used to add a user or file list to your skin.<br>
+										GroupBox- To visually group controls.</p>
+									</ul>
+									<p>If you have any feature requests, you can report them by <a href="mailto:spike_666_@hotmail.com">emailing this guy</a>...</p>
+									<p></td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+				<tr>
+					<td width="600" align="center" valign="top" bgcolor="#000466">[ <a href="about.html">about</a> | <a href="features.html">features</a> | <a href="download.html">download</a> | <a href="addons.html">add-ons</a> | <a href="tips.html">tips</a> | <a href="bugreports.html">bug reports</a> | <a href="comments.html">comments</a> ]</td>
+				</tr>
+			</table>
+		</center>
+	</body>
+
+</html>

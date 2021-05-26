@@ -1,0 +1,210 @@
+<html>
+
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+		<meta name="generator" content="Adobe GoLive 4">
+		<title>HolePuncher- Download</title>
+		<csactions>
+			<csaction name="B39FF5B314" class="Set Image URL" type="ONEVENT" val0="description" val1="../graphics/descriptions/aboutDesc.gif">
+			<csaction name="B39FF5B315" class="Set Image URL" type="ONEVENT" val0="description" val1="../graphics/descriptions/blankDesc.gif">
+			<csaction name="B39FF5B316" class="Set Image URL" type="ONEVENT" val0="description" val1="../graphics/descriptions/featuresDesc.gif">
+			<csaction name="B39FF5B317" class="Set Image URL" type="ONEVENT" val0="description" val1="../graphics/descriptions/blankDesc.gif">
+			<csaction name="B39FF5B318" class="Set Image URL" type="ONEVENT" val0="description" val1="../graphics/descriptions/downloadDesc.gif">
+			<csaction name="B39FF5B319" class="Set Image URL" type="ONEVENT" val0="description" val1="../graphics/descriptions/blankDesc.gif">
+			<csaction name="B39FF5B320" class="Set Image URL" type="ONEVENT" val0="description" val1="../graphics/descriptions/addonDesc.gif">
+			<csaction name="B39FF5B321" class="Set Image URL" type="ONEVENT" val0 val1="../graphics/descriptions/blankDesc.gif">
+			<csaction name="B39FF5B322" class="Set Image URL" type="ONEVENT" val0="description" val1="../graphics/descriptions/tipsDesc.gif">
+			<csaction name="B39FF5B323" class="Set Image URL" type="ONEVENT" val0="description" val1="../graphics/descriptions/blankDesc.gif">
+			<csaction name="B39FF5B324" class="Set Image URL" type="ONEVENT" val0="description" val1="../graphics/descriptions/bugDesc.gif">
+			<csaction name="B39FF5B325" class="Set Image URL" type="ONEVENT" val0="description" val1="../graphics/descriptions/blankDesc.gif">
+			<csaction name="B39FF5B326" class="Set Image URL" type="ONEVENT" val0="description" val1="../graphics/descriptions/commentsDesc.gif">
+			<csaction name="B39FF5B327" class="Set Image URL" type="ONEVENT" val0="description" val1="../graphics/descriptions/blankDesc.gif">
+		</csactions>
+		<csscriptdict>
+			<script><!--
+CSStopExecution = false;
+CSInit = new Array;
+function CSScriptInit() {
+idxArray = new Array;
+for(var i=0;i<CSInit.length;i++)
+	idxArray[i] = i;
+CSAction2(CSInit, idxArray);
+}
+CSAg = window.navigator.userAgent; CSBVers = parseInt(CSAg.charAt(CSAg.indexOf("/")+1),10);
+function IsIE() { return CSAg.indexOf("MSIE") > 0;}
+function CSIEStyl(s) { return document.all.tags("div")[s].style; }
+function CSNSStyl(s) { return CSFindElement(s,0); }
+function CSFindElement(n,ly) { if (CSBVers < 4) return document[n];
+	var curDoc = ly ? ly.document : document; var elem = curDoc[n];
+	if (!elem) { for (var i=0;i<curDoc.layers.length;i++) {
+		elem = CSFindElement(n,curDoc.layers[i]); if (elem) return elem; }}
+	return elem;
+}
+function CSButtonReturn () {
+	var bAgent = window.navigator.userAgent; 
+	var bAppName = window.navigator.appName;
+	if ((bAppName.indexOf("Explorer") >= 0) && (bAgent.indexOf("Mozilla/3") >= 0) && (bAgent.indexOf("Mac") >= 0))
+		return false; // follow link
+	else return true; // follow link
+}
+CSIm = new Object();
+function CSIShow(n,i) {
+	if (document.images) {
+		if (CSIm[n]) {
+			var img = (!IsIE()) ? CSFindElement(n,0) : document[n];
+			if (img && typeof(CSIm[n][i].src) != "undefined") {img.src = CSIm[n][i].src;}
+			if(i != 0)
+				self.status = CSIm[n][3];
+			else
+				self.status = " ";
+			return true;
+		}
+	}
+	return false;
+}
+function CSILoad(action) {
+	im = action[1];
+	if (document.images) {
+		CSIm[im] = new Object();
+		for (var i=2;i<5;i++) {
+			if (action[i] != '') { CSIm[im][i-2] = new Image(); CSIm[im][i-2].src = action[i]; }
+			else CSIm[im][i-2] = 0;
+		}
+		CSIm[im][3] = action[5];
+	}
+}
+CSStopExecution = false;
+
+function CSAction(array) { 
+	return CSAction2(CSAct, array);
+}
+function CSAction2(fct, array) { 
+	var result;
+	for (var i=0;i<array.length;i++) {
+		if(CSStopExecution) return false; 
+		var actArray = fct[array[i]];
+		var tempArray = new Array;
+		for(var j=1;j<actArray.length;j++) {
+			if((actArray[j] != null) && (typeof(actArray[j]) == "object") && (actArray[j].length == 2)) {
+				if(actArray[j][0] == "VAR") {
+					tempArray[j] = CSStateArray[actArray[j][1]];
+				}
+				else {
+					if(actArray[j][0] == "ACT") {
+						tempArray[j] = CSAction(new Array(new String(actArray[j][1])));
+					}
+				else
+					tempArray[j] = actArray[j];
+				}
+			}
+			else
+				tempArray[j] = actArray[j];
+		}			
+		result = actArray[0](tempArray);
+	}
+	return result;
+}
+CSAct = new Object;
+function CSSetImageURL(action) {
+	var img = null;
+	if (document.images) {
+		if (!IsIE()) img = CSFindElement(action[1],0);
+		else img = document.images[action[1]];
+		if (img) img.src = action[2];
+	}
+}
+// --></script>
+		</csscriptdict>
+		<csactiondict>
+		<script><!--
+CSInit[CSInit.length] = new Array(CSILoad,/*CMP*/'button7',/*URL*/'../graphics/linkbar/linkBaroff-01-01.gif',/*URL*/'../graphics/linkbar/linkBaron-01-01.gif',/*URL*/'','');
+CSInit[CSInit.length] = new Array(CSILoad,/*CMP*/'button5',/*URL*/'../graphics/linkbar/linkBaroff-01-03.gif',/*URL*/'../graphics/linkbar/linkBaron-01-03.gif',/*URL*/'','');
+CSInit[CSInit.length] = new Array(CSILoad,/*CMP*/'button4',/*URL*/'../graphics/linkbar/linkBaroff-01-05.gif',/*URL*/'../graphics/linkbar/linkBaron-01-05.gif',/*URL*/'','');
+CSInit[CSInit.length] = new Array(CSILoad,/*CMP*/'button3',/*URL*/'../graphics/linkbar/linkBaroff-01-07.gif',/*URL*/'../graphics/linkbar/linkBaron-01-07.gif',/*URL*/'','');
+CSInit[CSInit.length] = new Array(CSILoad,/*CMP*/'button2',/*URL*/'../graphics/linkbar/linkBaroff-01-09.gif',/*URL*/'../graphics/linkbar/linkBaron-01-09.gif',/*URL*/'','');
+CSInit[CSInit.length] = new Array(CSILoad,/*CMP*/'button',/*URL*/'../graphics/linkbar/linkBaroff-01-11.gif',/*URL*/'../graphics/linkbar/linkBaron-01-11.gif',/*URL*/'','');
+CSInit[CSInit.length] = new Array(CSILoad,/*CMP*/'button6',/*URL*/'../graphics/linkbar/linkBaroff-01-13.gif',/*URL*/'../graphics/linkbar/linkBaron-01-13.gif',/*URL*/'','');
+CSAct[/*CMP*/ 'B39FF5B314'] = new Array(CSSetImageURL,/*CMP*/ 'description',/*URL*/ '../graphics/descriptions/aboutDesc.gif');
+CSAct[/*CMP*/ 'B39FF5B315'] = new Array(CSSetImageURL,/*CMP*/ 'description',/*URL*/ '../graphics/descriptions/blankDesc.gif');
+CSAct[/*CMP*/ 'B39FF5B316'] = new Array(CSSetImageURL,/*CMP*/ 'description',/*URL*/ '../graphics/descriptions/featuresDesc.gif');
+CSAct[/*CMP*/ 'B39FF5B317'] = new Array(CSSetImageURL,/*CMP*/ 'description',/*URL*/ '../graphics/descriptions/blankDesc.gif');
+CSAct[/*CMP*/ 'B39FF5B318'] = new Array(CSSetImageURL,/*CMP*/ 'description',/*URL*/ '../graphics/descriptions/downloadDesc.gif');
+CSAct[/*CMP*/ 'B39FF5B319'] = new Array(CSSetImageURL,/*CMP*/ 'description',/*URL*/ '../graphics/descriptions/blankDesc.gif');
+CSAct[/*CMP*/ 'B39FF5B320'] = new Array(CSSetImageURL,/*CMP*/ 'description',/*URL*/ '../graphics/descriptions/addonDesc.gif');
+CSAct[/*CMP*/ 'B39FF5B321'] = new Array(CSSetImageURL,/*CMP*/ '',/*URL*/ '../graphics/descriptions/blankDesc.gif');
+CSAct[/*CMP*/ 'B39FF5B322'] = new Array(CSSetImageURL,/*CMP*/ 'description',/*URL*/ '../graphics/descriptions/tipsDesc.gif');
+CSAct[/*CMP*/ 'B39FF5B323'] = new Array(CSSetImageURL,/*CMP*/ 'description',/*URL*/ '../graphics/descriptions/blankDesc.gif');
+CSAct[/*CMP*/ 'B39FF5B324'] = new Array(CSSetImageURL,/*CMP*/ 'description',/*URL*/ '../graphics/descriptions/bugDesc.gif');
+CSAct[/*CMP*/ 'B39FF5B325'] = new Array(CSSetImageURL,/*CMP*/ 'description',/*URL*/ '../graphics/descriptions/blankDesc.gif');
+CSAct[/*CMP*/ 'B39FF5B326'] = new Array(CSSetImageURL,/*CMP*/ 'description',/*URL*/ '../graphics/descriptions/commentsDesc.gif');
+CSAct[/*CMP*/ 'B39FF5B327'] = new Array(CSSetImageURL,/*CMP*/ 'description',/*URL*/ '../graphics/descriptions/blankDesc.gif');
+
+// --></script>
+		</csactiondict>
+	</head>
+
+	<body bgcolor="black" text="white" link="white" alink="white" vlink="#7f7f7f" onload="CSScriptInit();">
+		<center>
+			<table border="0" cellpadding="0" cellspacing="0" width="74" height="288">
+				<tr height="85">
+					<td width="600" height="85" valign="bottom">
+						<table border="0" cellpadding="0" cellspacing="0" width="137">
+							<tr>
+								<td><img height="45" width="300" src="../graphics/corner.gif"></td>
+								<td><img height="45" width="300" src="../graphics/banners/download.gif"></td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<table border="0" cellpadding="0" cellspacing="0" width="600">
+										<tr>
+											<td width="39"><csobj w="39" h="20" t="Button" ht="../graphics/linkbar/linkBaron-01-01.gif" csover="B39FF5B314" csout="B39FF5B315"><a href="about.html" onmouseover="CSAction(new Array(/*CMP*/'B39FF5B314'));return CSIShow(/*CMP*/'button7',1)" onmouseout="CSAction(new Array(/*CMP*/'B39FF5B315'));return CSIShow(/*CMP*/'button7',0)" onclick="return CSButtonReturn()"><img src="../graphics/linkbar/linkBaroff-01-01.gif" width="39" height="20" name="button7" border="0"></a></csobj></td>
+											<td width="9"><img height="20" width="9" src="../graphics/linkbar/linkBaroff-01-02.gif"></td>
+											<td width="51"><csobj w="51" h="20" t="Button" ht="../graphics/linkbar/linkBaron-01-03.gif" csover="B39FF5B316" csout="B39FF5B317"><a href="features.html" onmouseover="CSAction(new Array(/*CMP*/'B39FF5B316'));return CSIShow(/*CMP*/'button5',1)" onmouseout="CSAction(new Array(/*CMP*/'B39FF5B317'));return CSIShow(/*CMP*/'button5',0)" onclick="return CSButtonReturn()"><img src="../graphics/linkbar/linkBaroff-01-03.gif" width="51" height="20" name="button5" border="0"></a></csobj></td>
+											<td width="10"><img height="20" width="10" src="../graphics/linkbar/linkBaroff-01-04.gif"></td>
+											<td width="26"><csobj w="59" h="20" t="Button" ht="../graphics/linkbar/linkBaron-01-05.gif" csover="B39FF5B318" csout="B39FF5B319"><a href="download.html" onmouseover="CSAction(new Array(/*CMP*/'B39FF5B318'));return CSIShow(/*CMP*/'button4',1)" onmouseout="CSAction(new Array(/*CMP*/'B39FF5B319'));return CSIShow(/*CMP*/'button4',0)" onclick="return CSButtonReturn()"><img src="../graphics/linkbar/linkBaroff-01-05.gif" width="59" height="20" name="button4" border="0"></a></csobj></td>
+											<td width="10"><img height="20" width="10" src="../graphics/linkbar/linkBaroff-01-06.gif"></td>
+											<td width="52"><csobj w="52" h="20" t="Button" ht="../graphics/linkbar/linkBaron-01-07.gif" csover="B39FF5B320" csout="B39FF5B321"><a href="addons.html" onmouseover="CSAction(new Array(/*CMP*/'B39FF5B320'));return CSIShow(/*CMP*/'button3',1)" onmouseout="CSAction(new Array(/*CMP*/'B39FF5B321'));return CSIShow(/*CMP*/'button3',0)" onclick="return CSButtonReturn()"><img src="../graphics/linkbar/linkBaroff-01-07.gif" width="52" height="20" name="button3" border="0"></a></csobj></td>
+											<td width="9"><img height="20" width="9" src="../graphics/linkbar/linkBaroff-01-08.gif"></td>
+											<td><csobj w="26" h="20" t="Button" ht="../graphics/linkbar/linkBaron-01-09.gif" csover="B39FF5B322" csout="B39FF5B323"><a href="tips.html" onmouseover="CSAction(new Array(/*CMP*/'B39FF5B322'));return CSIShow(/*CMP*/'button2',1)" onmouseout="CSAction(new Array(/*CMP*/'B39FF5B323'));return CSIShow(/*CMP*/'button2',0)" onclick="return CSButtonReturn()"><img src="../graphics/linkbar/linkBaroff-01-09.gif" width="26" height="20" name="button2" border="0"></a></csobj></td>
+											<td><img height="20" width="10" src="../graphics/linkbar/linkBaroff-01-10.gif"></td>
+											<td><csobj w="69" h="20" t="Button" ht="../graphics/linkbar/linkBaron-01-11.gif" csover="B39FF5B324" csout="B39FF5B325"><a href="bugreports.html" onmouseover="CSAction(new Array(/*CMP*/'B39FF5B324'));return CSIShow(/*CMP*/'button',1)" onmouseout="CSAction(new Array(/*CMP*/'B39FF5B325'));return CSIShow(/*CMP*/'button',0)" onclick="return CSButtonReturn()"><img src="../graphics/linkbar/linkBaroff-01-11.gif" width="69" height="20" name="button" border="0"></a></csobj></td>
+											<td><img height="20" width="9" src="../graphics/linkbar/linkBaroff-01-12.gif"></td>
+											<td><csobj w="63" h="20" t="Button" ht="../graphics/linkbar/linkBaron-01-13.gif" csover="B39FF5B326" csout="B39FF5B327"><a href="comments.html" onmouseover="CSAction(new Array(/*CMP*/'B39FF5B326'));return CSIShow(/*CMP*/'button6',1)" onmouseout="CSAction(new Array(/*CMP*/'B39FF5B327'));return CSIShow(/*CMP*/'button6',0)" onclick="return CSButtonReturn()"><img src="../graphics/linkbar/linkBaroff-01-13.gif" width="63" height="20" name="button6" border="0"></a></csobj></td>
+											<td><img height="20" width="184" src="../graphics/linkbar/linkBaroff-01-14.gif"></td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2"><img height="20" width="600" src="../graphics/descriptions/blankDesc.gif" name="description"></td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+				<tr height="187">
+					<td width="600" height="187" align="center" valign="middle" bgcolor="#000466">
+						<table cool width="569" height="51" border="0" cellpadding="0" cellspacing="0" gridx="16" showgridx gridy="16" showgridy>
+							<tr height="1" cntrlrow>
+								<td width="1" height="1"></td>
+								<td width="566" height="1"><spacer type="block" width="566" height="1"></td>
+							</tr>
+							<tr height="48">
+								<td width="1" height="48"><spacer type="block" width="1" height="48"></td>
+								<td width="566" height="48" colspan="1" rowspan="1" valign="top" align="left" xpos="0" content csheight="48">
+									<center>
+										<b>HolePuncher is not currently available, please check back soon.</b></center>
+									<div align="left">
+										<p><font size="2">Current state of HolePuncher: 1.0a52</font></div>
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+				<tr>
+					<td width="600" align="center" valign="top" bgcolor="#000466">[ <a href="about.html">about</a> | <a href="features.html">features</a> | <a href="download.html">download</a> | <a href="addons.html">add-ons</a> | <a href="tips.html">tips</a> | <a href="bugreports.html">bug reports</a> | <a href="comments.html">comments</a> ]</td>
+				</tr>
+			</table>
+		</center>
+	</body>
+
+</html>

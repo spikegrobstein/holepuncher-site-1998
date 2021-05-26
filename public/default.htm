@@ -1,0 +1,146 @@
+<html>
+
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+		<meta name="generator" content="Adobe GoLive 4">
+		<title>HolePuncher</title>
+		<csscriptdict>
+			<script><!--
+CSStopExecution = false;
+CSInit = new Array;
+function CSScriptInit() {
+idxArray = new Array;
+for(var i=0;i<CSInit.length;i++)
+	idxArray[i] = i;
+CSAction2(CSInit, idxArray);
+}
+CSAg = window.navigator.userAgent; CSBVers = parseInt(CSAg.charAt(CSAg.indexOf("/")+1),10);
+function IsIE() { return CSAg.indexOf("MSIE") > 0;}
+function CSIEStyl(s) { return document.all.tags("div")[s].style; }
+function CSNSStyl(s) { return CSFindElement(s,0); }
+function CSFindElement(n,ly) { if (CSBVers < 4) return document[n];
+	var curDoc = ly ? ly.document : document; var elem = curDoc[n];
+	if (!elem) { for (var i=0;i<curDoc.layers.length;i++) {
+		elem = CSFindElement(n,curDoc.layers[i]); if (elem) return elem; }}
+	return elem;
+}
+function CSButtonReturn () {
+	var bAgent = window.navigator.userAgent; 
+	var bAppName = window.navigator.appName;
+	if ((bAppName.indexOf("Explorer") >= 0) && (bAgent.indexOf("Mozilla/3") >= 0) && (bAgent.indexOf("Mac") >= 0))
+		return false; // follow link
+	else return true; // follow link
+}
+CSIm = new Object();
+function CSIShow(n,i) {
+	if (document.images) {
+		if (CSIm[n]) {
+			var img = (!IsIE()) ? CSFindElement(n,0) : document[n];
+			if (img && typeof(CSIm[n][i].src) != "undefined") {img.src = CSIm[n][i].src;}
+			if(i != 0)
+				self.status = CSIm[n][3];
+			else
+				self.status = " ";
+			return true;
+		}
+	}
+	return false;
+}
+function CSILoad(action) {
+	im = action[1];
+	if (document.images) {
+		CSIm[im] = new Object();
+		for (var i=2;i<5;i++) {
+			if (action[i] != '') { CSIm[im][i-2] = new Image(); CSIm[im][i-2].src = action[i]; }
+			else CSIm[im][i-2] = 0;
+		}
+		CSIm[im][3] = action[5];
+	}
+}
+CSStopExecution = false;
+
+function CSAction(array) { 
+	return CSAction2(CSAct, array);
+}
+function CSAction2(fct, array) { 
+	var result;
+	for (var i=0;i<array.length;i++) {
+		if(CSStopExecution) return false; 
+		var actArray = fct[array[i]];
+		var tempArray = new Array;
+		for(var j=1;j<actArray.length;j++) {
+			if((actArray[j] != null) && (typeof(actArray[j]) == "object") && (actArray[j].length == 2)) {
+				if(actArray[j][0] == "VAR") {
+					tempArray[j] = CSStateArray[actArray[j][1]];
+				}
+				else {
+					if(actArray[j][0] == "ACT") {
+						tempArray[j] = CSAction(new Array(new String(actArray[j][1])));
+					}
+				else
+					tempArray[j] = actArray[j];
+				}
+			}
+			else
+				tempArray[j] = actArray[j];
+		}			
+		result = actArray[0](tempArray);
+	}
+	return result;
+}
+CSAct = new Object;
+
+// --></script>
+		</csscriptdict>
+		<csactiondict>
+		<script><!--
+CSInit[CSInit.length] = new Array(CSILoad,/*CMP*/'button3',/*URL*/'graphics/introLinkBar/iLinkBarOff-01-01.gif',/*URL*/'graphics/introLinkBar/iLinkBarOn-01-01.gif',/*URL*/'','');
+CSInit[CSInit.length] = new Array(CSILoad,/*CMP*/'button',/*URL*/'graphics/introLinkBar/iLinkBarOff-01-03.gif',/*URL*/'graphics/introLinkBar/iLinkBarOn-01-03.gif',/*URL*/'','');
+CSInit[CSInit.length] = new Array(CSILoad,/*CMP*/'button2',/*URL*/'graphics/introLinkBar/iLinkBarOff-01-05.gif',/*URL*/'graphics/introLinkBar/iLinkBarOn-01-05.gif',/*URL*/'','');
+CSInit[CSInit.length] = new Array(CSILoad,/*CMP*/'button4',/*URL*/'graphics/introLinkBar/iLinkBarOff-01-07.gif',/*URL*/'graphics/introLinkBar/iLinkBarOn-01-07.gif',/*URL*/'','');
+CSInit[CSInit.length] = new Array(CSILoad,/*CMP*/'button5',/*URL*/'graphics/introLinkBar/iLinkBarOff-01-09.gif',/*URL*/'graphics/introLinkBar/iLinkBarOn-01-09.gif',/*URL*/'','');
+CSInit[CSInit.length] = new Array(CSILoad,/*CMP*/'button6',/*URL*/'graphics/introLinkBar/iLinkBarOff-01-11.gif',/*URL*/'graphics/introLinkBar/iLinkBarOn-01-11.gif',/*URL*/'','');
+CSInit[CSInit.length] = new Array(CSILoad,/*CMP*/'button7',/*URL*/'graphics/introLinkBar/iLinkBarOff-01-13.gif',/*URL*/'graphics/introLinkBar/iLinkBarOn-01-13.gif',/*URL*/'','');
+
+// --></script>
+		</csactiondict>
+	</head>
+
+	<body bgcolor="#000466" text="white" link="white" alink="white" vlink="#7f7f7f" onload="CSScriptInit();">
+		<center>
+			<table border="0" cellpadding="0" cellspacing="0" width="75">
+				<tr>
+					<td valign="bottom">
+						<center>
+							<a href="html/about.html"><img height="307" width="400" src="graphics/HPsplash.gif" border="0"></a></center>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top">
+						<table border="0" cellpadding="0" cellspacing="0" width="400">
+							<tr>
+								<td width="43"><csobj w="43" h="22" t="Button" ht="graphics/introLinkBar/iLinkBarOn-01-01.gif"><a href="html/about.html" onmouseover="return CSIShow(/*CMP*/'button3',1)" onmouseout="return CSIShow(/*CMP*/'button3',0)" onclick="return CSButtonReturn()"><img src="graphics/introLinkBar/iLinkBarOff-01-01.gif" width="43" height="22" name="button3" border="0"></a></csobj></td>
+								<td width="6"><img height="22" width="6" src="graphics/introLinkBar/iLinkBarOff-01-02.gif"></td>
+								<td width="51"><csobj w="51" h="22" t="Button" ht="graphics/introLinkBar/iLinkBarOn-01-03.gif"><a href="html/features.html" onmouseover="return CSIShow(/*CMP*/'button',1)" onmouseout="return CSIShow(/*CMP*/'button',0)" onclick="return CSButtonReturn()"><img src="graphics/introLinkBar/iLinkBarOff-01-03.gif" width="51" height="22" name="button" border="0"></a></csobj></td>
+								<td width="5"><img height="22" width="5" src="graphics/introLinkBar/iLinkBarOff-01-04.gif"></td>
+								<td width="59"><csobj w="59" h="22" t="Button" ht="graphics/introLinkBar/iLinkBarOn-01-05.gif"><a href="html/download.html" onmouseover="return CSIShow(/*CMP*/'button2',1)" onmouseout="return CSIShow(/*CMP*/'button2',0)" onclick="return CSButtonReturn()"><img src="graphics/introLinkBar/iLinkBarOff-01-05.gif" width="59" height="22" name="button2" border="0"></a></csobj></td>
+								<td width="6"><img height="22" width="6" src="graphics/introLinkBar/iLinkBarOff-01-06.gif"></td>
+								<td width="51">
+									<div align="left">
+										<csobj w="51" h="22" t="Button" ht="graphics/introLinkBar/iLinkBarOn-01-07.gif"><a href="html/addons.html" onmouseover="return CSIShow(/*CMP*/'button4',1)" onmouseout="return CSIShow(/*CMP*/'button4',0)" onclick="return CSButtonReturn()"><img src="graphics/introLinkBar/iLinkBarOff-01-07.gif" width="51" height="22" name="button4" border="0"></a></csobj></div>
+								</td>
+								<td width="7"><img height="22" width="7" src="graphics/introLinkBar/iLinkBarOff-01-08.gif"></td>
+								<td width="24"><csobj w="24" h="22" t="Button" ht="graphics/introLinkBar/iLinkBarOn-01-09.gif"><a href="html/tips.html" onmouseover="return CSIShow(/*CMP*/'button5',1)" onmouseout="return CSIShow(/*CMP*/'button5',0)" onclick="return CSButtonReturn()"><img src="graphics/introLinkBar/iLinkBarOff-01-09.gif" width="24" height="22" name="button5" border="0"></a></csobj></td>
+								<td width="6"><img height="22" width="6" src="graphics/introLinkBar/iLinkBarOff-01-10.gif"></td>
+								<td width="67"><csobj w="67" h="22" t="Button" ht="graphics/introLinkBar/iLinkBarOn-01-11.gif"><a href="html/bugreports.html" onmouseover="return CSIShow(/*CMP*/'button6',1)" onmouseout="return CSIShow(/*CMP*/'button6',0)" onclick="return CSButtonReturn()"><img src="graphics/introLinkBar/iLinkBarOff-01-11.gif" width="67" height="22" name="button6" border="0"></a></csobj></td>
+								<td width="7"><img height="22" width="7" src="graphics/introLinkBar/iLinkBarOff-01-12.gif"></td>
+								<td width="68"><csobj w="68" h="22" t="Button" ht="graphics/introLinkBar/iLinkBarOn-01-13.gif"><a href="html/comments.html" onmouseover="return CSIShow(/*CMP*/'button7',1)" onmouseout="return CSIShow(/*CMP*/'button7',0)" onclick="return CSButtonReturn()"><img src="graphics/introLinkBar/iLinkBarOff-01-13.gif" width="68" height="22" name="button7" border="0"></a></csobj></td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+		</center>
+	</body>
+
+</html>
